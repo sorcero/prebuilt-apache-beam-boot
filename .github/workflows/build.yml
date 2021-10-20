@@ -21,18 +21,17 @@ jobs:
 
     - name: Clone 
       run: |
-        git clone https://github.com/apache/beam --depth=1
+        git clone https://github.com/apache/beam
         pushd beam/sdks/python/container
 
         git fetch --tags
 
         # Get latest tag name
-        latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-        export latestTag
+        #latestTag=$(git describe --tags --match 'v*.*.*' --abbrev=0 HEAD)
+        #export latestTag
 
         # Checkout latest tag
-        git checkout $latestTag
-        echo "LATEST_TAG=$latestTag" >> $GITHUB_ENV
+        echo "LATEST_TAG=$(git describe --always --tags --match 'v*.*.*')" >> $GITHUB_ENV
 
         go build -o python-boot -ldflags "-s -w" .
         
