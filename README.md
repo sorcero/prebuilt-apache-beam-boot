@@ -9,3 +9,9 @@ Disclaimer
 The builds provided by this script are not provided officially by the 
 Apache Beam project. They are built automatically on GitHub Actions
 
+License
+-------
+This project only distributes binary from [apache-beam][apachebeam], The license from [Apache Beam Project][apachebeam] and the copyright notice is 
+included in the repository complying to the Apache License.
+
+[apachebeam]: https://github.com/apache/beam
