@@ -3,7 +3,7 @@ name: Go
 on:
   push:
   schedule:
-    - cron: '47 11 * * *'
+    - cron: '47 11 */7 * *'
   workflow_dispatch:
   pull_request:
 
